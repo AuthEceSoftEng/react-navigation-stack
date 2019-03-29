@@ -433,6 +433,7 @@ class StackViewLayout extends React.Component {
   }
 
   _handlePanGestureStateChange = ({ nativeEvent }) => {
+    if (!this._isGestureEnabled()) return;
     if (nativeEvent.oldState === State.ACTIVE) {
       // Gesture was cancelled! For example, some navigation state update
       // arrived while the gesture was active that cancelled it out
